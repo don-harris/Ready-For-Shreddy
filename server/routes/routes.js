@@ -10,11 +10,11 @@ router.get('/', (req, res) => {
     .then(result => res.json(result))
 })
 
-router.get('/view/:id', (req, res) => {
-  var id = req.params.id
-  db('Accomodation')
+// router.get('/view/:id', (req, res) => {
+//   var id = req.params.id
+//   db.('Accomodation')
  
-})
+// })
 
 module.exports = router
 

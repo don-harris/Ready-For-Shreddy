@@ -7,6 +7,7 @@ const server = express()
 const request = require('superagent')
 const accoms = require('./routes/accoms')
 const resorts = require('./routes/routes')
+const auth = require('./routes/auth')
 
 server.use(bodyParser.json())
 server.use(express.static(path.join(__dirname, './public')))
@@ -28,17 +29,9 @@ server.use('/api/v1/snowreport/:id', (req, res) => {
       }
     })
 })
-// const xxx = require('./routes/xxx')
-// const yyyy = require('./routes/yyyy')
-// const zzzz = require('./routes/zzzz')
 
-// server.use('/api/v1/xxx', xxx)
-// server.use('/api/v1/yyy', yyy)
-// server.use('/api/v1/zzz', zzz)
+server.use('/api/v1/auth', auth)
 
-// server.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, './public/index.html'))
-// })
 server.use('/api/v1/accoms', accoms)
 server.use('/api/v1/resorts', resorts)
 
